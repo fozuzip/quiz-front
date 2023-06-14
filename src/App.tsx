@@ -1,11 +1,5 @@
 function App() {
-  return (
-    <>
-      <div>
-        <h1>Hello</h1>
-      </div>
-    </>
-  );
+  return <h1 className="text-3xl font-bold underline">Hello with Tailwind</h1>;
 }
 
 export default App;
