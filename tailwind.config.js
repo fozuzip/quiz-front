@@ -9,6 +9,11 @@ export default {
       backgroundImage: {
         pattern: "url('/src/assets/background.png')",
       },
+      colors: {
+        "dark-text": "#2F527B",
+        violet: "rgba(96, 102, 208, 0.8)",
+        yellow: "#F9A826",
+      },
     },
   },
   plugins: [],
