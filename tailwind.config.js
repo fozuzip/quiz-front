@@ -10,9 +10,11 @@ export default {
         pattern: "url('/src/assets/background.png')",
       },
       colors: {
-        "dark-text": "#2F527B",
+        "dark-text ": "#1D355D",
         violet: "rgba(96, 102, 208, 0.8)",
         yellow: "#F9A826",
+        green: "#60BF88",
+        red: "#EA8282",
       },
     },
   },
