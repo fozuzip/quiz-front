@@ -10,6 +10,7 @@ const api = axios.create({
 
 // TODO HANDLE ERRORS
 // SAVE RESULTS ON CACHE
+// DONT CENTER CONTENT (GETS CUT OUT IN SMALLER SCREENS)
 
 export interface Country {
   id: string;
