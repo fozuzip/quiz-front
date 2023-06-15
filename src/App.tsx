@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import QuestionPage from "./pages/QuestionPage";
 import FinalPage from "./pages/FinalPage";
 
 import useCountryQuestions from "./utils/useCountryQuestions";
 
-const TOTAL_QUESTIONS = 1;
+const TOTAL_QUESTIONS = 10;
 
 function App() {
   const [questionCount, setQuestionCount] = useState(1);
@@ -24,7 +24,11 @@ function App() {
     setSelectedAnswer(null);
     generateQuestion();
   };
-  console.log(correctCount);
+
+  const reset = () => {
+    window.location.reload();
+  };
+
   return (
     <div className="flex h-screen w-full flex-col content-center justify-center bg-pattern bg-cover p-4 font-poppins">
       <div className="relative  m-auto w-full md:w-[464px]">
@@ -44,7 +48,7 @@ function App() {
             </>
           )
         ) : (
-          <FinalPage />
+          <FinalPage correctAnswers={correctCount} onTryAgain={reset} />
         )}
       </div>
     </div>

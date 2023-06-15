@@ -9,6 +9,7 @@ const api = axios.create({
 });
 
 // TODO HANDLE ERRORS
+// SAVE RESULTS ON CACHE
 
 export interface Country {
   id: string;
