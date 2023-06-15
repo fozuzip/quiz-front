@@ -1,5 +1,7 @@
 import clsx from "clsx";
 
+import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
+
 export type VariantType = "option" | "correct" | "wrong";
 
 type OptionButtonType = {
@@ -21,7 +23,7 @@ function OptionButton({
   const orderLetter = String.fromCharCode((index % 26) + 65);
 
   const buttonClass = clsx(
-    "w-full flex color items-center px-4 py-2 border-2 rounded-xl",
+    "w-full flex justify-between items-center px-4 py-2 border-2 rounded-xl",
     variant === "option" && "text-violet border-violet ",
     variant === "correct" && "text-white bg-green border-green ",
     variant === "wrong" && "text-white bg-red border-red ",
@@ -34,8 +36,17 @@ function OptionButton({
       className={buttonClass}
       onClick={isSelectable ? onClick : () => null}
     >
-      <span className="mr-16 text-2xl">{orderLetter}</span>
-      <span className="text-lg">{children}</span>
+      <div className="flex items-center">
+        <span className="mr-16 text-2xl">{orderLetter}</span>
+        <span className="text-md">{children}</span>
+      </div>
+
+      {variant === "correct" && (
+        <AiOutlineCheckCircle size={20} className="justify-self-end" />
+      )}
+      {variant === "wrong" && (
+        <AiOutlineCloseCircle size={20} className="justify-self-end" />
+      )}
     </button>
   );
 }
